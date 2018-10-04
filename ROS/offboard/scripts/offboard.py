@@ -39,9 +39,9 @@ if __name__ == '__main__':
             rate.sleep()
         
 
-        desiredPose.pose.position.x = 0
+        desiredPose.pose.position.x = 10
         desiredPose.pose.position.y = 0
-        desiredPose.pose.position.z = 25
+        desiredPose.pose.position.z = 5
 
         linear = Vector3(0,0,0)
         angular = Vector3(0,0,0)
@@ -81,7 +81,8 @@ if __name__ == '__main__':
             if count<100:
                 local_pos_pub.publish(desiredPose)
             else:
-                twist_pub.publish(twist)
+                local_pos_pub.publish(desiredPose)
+                #twist_pub.publish(twist)
             
             if count == 200:
                 print("Fin pose")    
@@ -91,3 +92,8 @@ if __name__ == '__main__':
     except rospy.ROSInterruptException:
         print("ROS Interruption exception")
         pass
+
+"""
+Interesante este codigo para tomar ejemplos como llamar a los servicios, y si fallan devolver el estado; o las funciones de wait_for_landed y asi:
+https://github.com/PX4/Firmware/blob/d2aa68f62c5e131f2cf4223cefdc6e1e29bbb5da/integrationtests/python_src/px4_it/mavros/mavros_test_common.py
+"""

@@ -24,7 +24,7 @@ if __name__ == '__main__':
         '''
 
         rosservice = rospy.ServiceProxy('mavros/cmd/command', CommandLong)
-        response = rosservice.call(True, 246, 0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+        response = rosservice.call(True, 246, 1, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
         print("Success: " + str(response.success))
         print("Result: " + str(response.result))
 
