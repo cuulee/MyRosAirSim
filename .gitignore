@@ -353,3 +353,4 @@ xcuserdata/
 
 ### ROS
 !ROS/*
+ROS/drone_training/*
