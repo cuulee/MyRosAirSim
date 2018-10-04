@@ -351,3 +351,5 @@ xcuserdata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+### ROS
+!ROS/*
